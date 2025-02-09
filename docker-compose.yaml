@@ -1,0 +1,12 @@
+#--- This homework test doesn't use Docker or a database but it's nice to know how to set it up if it did.
+version: '3.9'
+services:
+    postgres:
+        image: hub.docker.com/postgres:12
+        ports:
+            - "5432:5432"
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_DB=databasename_local
+            #--- trust means you don't need a password
+            - POSTGRES_HOST_AUTH_METHOD=trust

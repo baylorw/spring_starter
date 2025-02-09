@@ -1,0 +1,82 @@
+plugins {
+    id 'java'
+    id 'groovy' // for tests
+    id 'org.springframework.boot' version '3.4.2'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.baylorw'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('openApiVersion', "2.5.0")
+}
+
+dependencies {
+    //--- Core
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    //--- Caching
+    implementation 'org.springframework.boot:spring-boot-starter-cache:3.4.2'
+    implementation 'com.github.ben-manes.caffeine:caffeine:3.2.0'
+
+    //--- Dev tools
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    //--- Database
+    // This app doesn't use a database but it's still nice to know how to add JPA support.
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //------------
+    //--- Support
+    //------------
+    //--- Actuator health reporting
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    //--- Swagger (aka OpenAPI)
+    implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:$openApiVersion"
+    //--- Resilience4j circuit breaker
+    // This is probably overkill for a homework question so i'll comment it out for now.
+//    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:3.2.0'
+
+    //--- Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.spockframework:spock-core:2.4-M4-groovy-4.0'
+    testImplementation 'org.spockframework:spock-spring:2.4-M4-groovy-4.0'
+}
+
+//--- Spock generates JUnit annotations so we need JUnit stuff loaded.
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+//--- For whatever reason it's not easy in IntelliJ to setup integration tests. So we do this.
+sourceSets {
+    intTest {
+        groovy.srcDirs += ["src/test/integration"]
+        resources.srcDir 'src/test/integration/resources'
+        compileClasspath += sourceSets.main.output + sourceSets.test.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.test.runtimeClasspath
+    }
+    test {
+        groovy.srcDirs += ["src/test/unit"]
+        resources.srcDir 'src/test/unit/resources'
+    }
+}

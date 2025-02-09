@@ -1,0 +1,28 @@
+spring.application.name: branchtest
+
+github:
+    #--- At runtime the values will be pulled from, in order of priority:
+    #---    1. Environment variables (like those set by Terraform, k8s or the IDE)
+    #---    2. Environment-specific app.yaml files (e.g., application-dev.yaml)
+    #---    3. The default value specified here
+    url: ${GITHUB_URL:https://api.github.com}
+    endpoints:
+        #--- The {brackets} are used by UriComponentsBuilder for runtime replacement.
+        #--- Don't use ${brackets} or the value will be replaced at startup by the config file loader.
+        user: /users/{userName}
+        repos: /users/{userName}/repos
+
+
+spring:
+    #--- You can configure this in code but then you have to make code changes, open a PR, etc. to make changes. Ick.
+    cache:
+        cache-names: githubUser,githubUserRepos
+        caffeine:
+            spec: expireAfterWrite=5m,recordStats
+
+management:
+    endpoints:
+        web:
+            exposure:
+                #--- Show cache info in Actuator
+                include: health,caches,metrics
