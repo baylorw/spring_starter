@@ -1,9 +1,9 @@
-package com.baylorw.branchtest
+package com.baylorw.spring_starter
 
-import com.baylorw.branchtest.model.GitHubUser
-import com.baylorw.branchtest.model.GitHubUserRepo
-import com.baylorw.branchtest.model.GitHubUserRepoSummary
-import com.baylorw.branchtest.model.GitHubUserSummary
+import com.baylorw.spring_starter.model.GitHubUser
+import com.baylorw.spring_starter.model.GitHubUserRepo
+import com.baylorw.spring_starter.model.GitHubUserRepoSummary
+import com.baylorw.spring_starter.model.GitHubUserSummary
 
 class TestData {
     static GitHubUser getUserAlice() {

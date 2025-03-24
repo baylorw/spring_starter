@@ -1,19 +1,22 @@
-package com.baylorw.branchtest.service
+package com.baylorw.spring_starter.service
 
-import com.baylorw.branchtest.TestData
-import com.baylorw.branchtest.model.GitHubUser
-import com.baylorw.branchtest.model.GitHubUserRepo
-import com.baylorw.branchtest.model.GitHubUserRepoSummary
-import com.baylorw.branchtest.model.GitHubUserSummary
-import com.baylorw.branchtest.network.GitHubApi
+import com.baylorw.spring_starter.TestData
+import com.baylorw.spring_starter.model.GitHubUser
+import com.baylorw.spring_starter.model.GitHubUserRepo
+import com.baylorw.spring_starter.model.GitHubUserSummary
+import com.baylorw.spring_starter.network.GitHubApi
+import org.springframework.cache.CacheManager
 import spock.lang.Specification
 
 class GitHubServiceSpec extends Specification {
     GitHubService service
     GitHubApi restCaller = Mock()
+    CacheManager cacheManager = Mock()
 
     void setup() {
-        service = new GitHubService(restCaller)
+        service = new GitHubService(restCaller, cacheManager)
+
+        cacheManager.getCacheNames() >> new ArrayList<String>()
     }
 
 

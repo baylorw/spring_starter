@@ -1,4 +1,4 @@
-package com.baylorw.branchtest.exception;
+package com.baylorw.spring_starter.exception;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.http.HttpStatus;

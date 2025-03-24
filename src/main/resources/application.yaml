@@ -1,4 +1,4 @@
-spring.application.name: branchtest
+spring.application.name: spring_starter
 
 github:
     #--- At runtime the values will be pulled from, in order of priority:

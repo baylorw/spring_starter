@@ -1,10 +1,10 @@
-package com.baylorw.branchtest.service;
+package com.baylorw.spring_starter.service;
 
-import com.baylorw.branchtest.model.GitHubUser;
-import com.baylorw.branchtest.model.GitHubUserRepo;
-import com.baylorw.branchtest.model.GitHubUserRepoSummary;
-import com.baylorw.branchtest.model.GitHubUserSummary;
-import com.baylorw.branchtest.network.GitHubApi;
+import com.baylorw.spring_starter.model.GitHubUser;
+import com.baylorw.spring_starter.model.GitHubUserRepo;
+import com.baylorw.spring_starter.model.GitHubUserRepoSummary;
+import com.baylorw.spring_starter.model.GitHubUserSummary;
+import com.baylorw.spring_starter.network.GitHubApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +27,9 @@ public class GitHubService {
 
     private GitHubApi gitHubApi;
 
-    public GitHubService(GitHubApi gitHubApi) {
+    public GitHubService(GitHubApi gitHubApi, CacheManager cacheManager) {
         this.gitHubApi = gitHubApi;
+        this.cacheManager = cacheManager;
     }
 
 

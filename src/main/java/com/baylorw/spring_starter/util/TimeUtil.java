@@ -1,9 +1,8 @@
-package com.baylorw.branchtest.util;
+package com.baylorw.spring_starter.util;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-// NOTE: i already owned this class. i didn't write it for this homework, unlike everything else.
 public final class TimeUtil {
     /**
      * Convert a ZonedDateTime to a String.

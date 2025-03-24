@@ -1,6 +1,6 @@
-package com.baylorw.branchtest.controller;
+package com.baylorw.spring_starter.controller;
 
-import com.baylorw.branchtest.util.TimeUtil;
+import com.baylorw.spring_starter.util.TimeUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,7 +33,7 @@ public class DefaultController {
         //--- A lot of debate on this vs StringBuilder. Apparently, the new(ish) advice is to use normal string cat.
         //--- For single line appends, the JVM compiles both this and SB to the same bytecode.
         String response =
-                "<p>Branch Homework Service.</p>"
+                "<p>Example Service.</p>"
                         + "<p>current time: " + TimeUtil.format(ZonedDateTime.now(), "h:mm a z")
                         + " on " + TimeUtil.format(ZonedDateTime.now(), "E M-dd-yyyy") + "</p>"
                         + "<p>Swagger: <a href='" + swaggerUrl + "'>" + swaggerUrl + "</a></p>"

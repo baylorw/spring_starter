@@ -1,7 +1,7 @@
-package com.baylorw.branchtest.controller;
+package com.baylorw.spring_starter.controller;
 
-import com.baylorw.branchtest.model.GitHubUserSummary;
-import com.baylorw.branchtest.service.GitHubService;
+import com.baylorw.spring_starter.model.GitHubUserSummary;
+import com.baylorw.spring_starter.service.GitHubService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;

@@ -1,4 +1,3 @@
-#--- This homework test doesn't use Docker or a database but it's nice to know how to set it up if it did.
 version: '3.9'
 services:
     postgres:

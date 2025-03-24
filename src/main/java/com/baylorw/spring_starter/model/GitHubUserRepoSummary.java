@@ -1,4 +1,4 @@
-package com.baylorw.branchtest.model;
+package com.baylorw.spring_starter.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 

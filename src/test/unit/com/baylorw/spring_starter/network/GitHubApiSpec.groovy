@@ -1,4 +1,4 @@
-package com.baylorw.branchtest.network
+package com.baylorw.spring_starter.network
 
 import spock.lang.Specification
 

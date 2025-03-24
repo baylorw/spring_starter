@@ -1,7 +1,7 @@
-package com.baylorw.branchtest.controller
+package com.baylorw.spring_starter.controller
 
-import com.baylorw.branchtest.TestData
-import com.baylorw.branchtest.service.GitHubService
+import com.baylorw.spring_starter.TestData
+import com.baylorw.spring_starter.service.GitHubService
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest

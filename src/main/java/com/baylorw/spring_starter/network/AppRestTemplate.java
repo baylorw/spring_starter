@@ -1,4 +1,4 @@
-package com.baylorw.branchtest.network;
+package com.baylorw.spring_starter.network;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

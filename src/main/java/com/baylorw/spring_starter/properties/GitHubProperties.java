@@ -1,4 +1,4 @@
-package com.baylorw.branchtest.properties;
+package com.baylorw.spring_starter.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

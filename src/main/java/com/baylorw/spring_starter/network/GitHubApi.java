@@ -1,8 +1,8 @@
-package com.baylorw.branchtest.network;
+package com.baylorw.spring_starter.network;
 
-import com.baylorw.branchtest.model.GitHubUser;
-import com.baylorw.branchtest.model.GitHubUserRepo;
-import com.baylorw.branchtest.properties.GitHubProperties;
+import com.baylorw.spring_starter.model.GitHubUser;
+import com.baylorw.spring_starter.model.GitHubUserRepo;
+import com.baylorw.spring_starter.properties.GitHubProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.Cacheable;
