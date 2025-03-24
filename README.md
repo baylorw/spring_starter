@@ -1,4 +1,7 @@
-# Branch's Interview Take Home Test
+# Spring Starter App
+
+A barebones application to use as a starter for a new project or a reference for features like REST calls and parameterized Spock tests.
+
 
 # Table of contents
 <hr>
@@ -10,8 +13,7 @@
 <a name="overview"></a>
 # Overview
 <hr>
-The take home question asked for a Spring service that returns user data from GitHub. 
-Just a single GET endpoint. This app does that. 
+This app has a single GET endpoint that returns data pulled from Github user profiles.
 
 What's in the app:
 - One REST endpoint to get summarized GitHub user info
